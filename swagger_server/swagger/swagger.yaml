@@ -1,19 +1,16 @@
 openapi: 3.0.0
-servers:
-  # Added by API Auto Mocking Plugin
-  # Added by API Auto Mocking Plugin
-  # Added by API Auto Mocking Plugin
-  - description: SwaggerHub API Auto Mocking
-    url: https://virtserver.swaggerhub.com/AndreasElgaard/tutorial/1.0.0
 info:
-  description: This is a simple API
-  version: "1.0.0"
   title: Simple Inventory API
+  description: This is a simple API
   contact:
     email: you@your-company.com
   license:
     name: Apache 2.0
-    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.0
+servers:
+- url: https://virtserver.swaggerhub.com/tutorial/1.0.0
+  description: SwaggerHub API Auto Mocking
 paths:
   /student/{student_id}:
     get:
@@ -55,12 +52,7 @@ paths:
             format: integer
       responses:
         "200":
-          description: Deleted
-          content:
-            application/json:
-              schema:
-                type: number
-                format: integer
+          description: OK
         "400":
           description: Bad request.
         "404":
@@ -98,13 +90,10 @@ components:
       properties:
         student_id:
           type: integer
-          example: 1
         first_name:
           type: string
-          example: "Bobby"
         last_name:
           type: string
-          example: "Jensen"
         gradeRecords:
           type: array
           items:
@@ -117,9 +106,7 @@ components:
       properties:
         subject_name:
           type: string
-          example: "DevOps"
         grade:
           type: number
           minimum: 0
           maximum: 10
-          example: 5.5
